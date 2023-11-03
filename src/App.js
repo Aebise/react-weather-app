@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather defaultCity="New York" />
         <footer>
           <a href="https://github.com/Aebise/weather-react" target="_blank">
             Source code &nbsp;
