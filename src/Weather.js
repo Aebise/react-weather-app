@@ -10,7 +10,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       temperature: Math.round(response.data.main.temp),
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
+      icon: response.data.weather[0].icon,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
