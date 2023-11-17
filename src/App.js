@@ -7,7 +7,7 @@ function App() {
       <div className="container">
         <Weather defaultCity="New York" />
         <footer>
-          <a href="https://github.com/Aebise/weather-react" target="_blank">
+          <a href="https://github.com/Aebise/react-weather-app" target="_blank">
             Source code &nbsp;
           </a>
           by Aebise Chimdessa
