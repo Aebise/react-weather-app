@@ -9,21 +9,27 @@ export default function WeatherForecast(props) {
 
   function handleResponse(response) {
     console.log(response.data);
-    setForecast(response.data);
+    setForecast(response.data.daily);
     setLoaded(true);
   }
   if (loaded) {
     return (
       <div className="WeatherForecast">
         <div className="row">
-          <div className="col">
-            <WeatherForecastDay data={forecast.daily[0]} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
   } else {
-    let apiKey = "3f6be1c407b0d9d1933561808db358ba";
+    let apiKey = "4b3503b2f08a729413c4d33ef1186004";
     let lat = props.coordinates.lat;
     let lon = props.coordinates.lon;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
